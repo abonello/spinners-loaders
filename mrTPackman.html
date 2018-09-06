@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spinners</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+        crossorigin="anonymous" />
+    <style>
+
+        body {
+            padding: 100px;
+            background: #eee;
+        }
+
+        .wrap {
+            margin: 50px auto;
+            width: 80%;
+            box-shadow: 0 35px 40px -20px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.2);
+            /* background: red; */
+            text-align: center;
+            vertical-align: middle;
+            /* height: 400px; */
+            box-sizing: border-box;
+            background: white;
+            padding-bottom: 100px
+        }
+
+        h1 {
+            padding: 50px;
+        }
+
+        .back {
+            margin-top: 50px;
+        }
+
+        .loader2 {
+            width: 300px;
+            height: 0px;
+            border-top: 8px dotted #d8ddda;
+            /* background: #eee; */
+            display: inline-block;
+            position: relative;
+            margin: 60px auto 20px auto;
+        }
+
+        .cover2 {
+            background: white;
+            height: 20px;
+            width: 40px;
+            position: absolute;
+            top: -10px;
+            left: 0px;
+            animation: increaseCover2 7s linear infinite;
+        }
+
+        .packman {
+            width: 0px;
+            height: 0px;
+            /* border-top: 8px dotted #eee; */
+            /* background: #eee; */
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform-origin: center center;
+            /* margin: 25px auto; */
+            background: green;
+            margin-top: -0px;
+            /* border: 4px solid black; */
+            border-right-color: transparent;
+            z-index: 1;
+            animation: move2 7s linear infinite,
+                        switchDirection 7s linear infinite;
+        }
+
+        .packman::before, 
+        .packman::after {
+            content: '';
+            display: block;
+            border: 30px solid rgb(221, 183, 14);
+            height: 0px;
+            width: 0px;
+            border-radius: 50%;
+            border-right-color: transparent;
+            position: absolute;
+            top: 50%;
+            margin-top: -34px;
+            z-index: -1;
+            transform-origin: center center;
+            /* animation: move 5s linear infinite; */
+            /* box-shadow:0 0 0 30px rgba(0,0,0,0.7); */
+            animation: colorChange 7s linear infinite;
+        }
+
+        .packman::before {
+            box-shadow: -5px -15px 0 -7px rgba(66, 40, 10, 0.938);
+            border-bottom-color: transparent;
+            animation: top-chop2 1s ease-in infinite;
+        }
+
+        .packman::after {
+            /* border-color: green;
+            border-right-color: transparent; */
+            /* border-top-color: transparent; */
+            animation: bottom-chop2 1s ease-out infinite;
+        }
+
+        .eye {
+            background: black;
+            width: 10px;
+            height: 10px;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px black;
+            border-radius: 50%;
+            z-index: 10;
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            animation: eyeMove 1s ease-in infinite;
+        }
+
+         @keyframes bottom-chop2 {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-46deg); }
+        }
+
+        @keyframes top-chop2 {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(46deg); }
+        }
+
+        @keyframes eyeMove {
+            0%, 100% { transform: translateX(-2px) translateY(-0px);  }
+            50% {transform: translateX(5px) translateY(8px); }
+        }
+
+        @keyframes move2 {
+            0%, 49.99% { right: 30px; }
+            50%, 100% { right: -30px; }
+        }
+
+        @keyframes increaseCover2 {
+            0%, 100% { width: 40px; }
+            50%, 52% { width: 280px; }
+        }
+
+        @keyframes switchDirection {
+            0%, 49.99%, 100% { transform: rotateY(0deg); }
+            /* 49.99% { transform: scale(1)} */
+            50%, 99.99% { transform: rotateY(180deg); }
+        }
+
+        @keyframes colorChange {
+            0%, 100% { box-shadow:0 0 0 30px rgba(0,0,0,0.7); }
+            50%, 52% { box-shadow:0 0 0 60px rgba(0,0,0,0.7); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Loader</h1>
+        <div class="row">
+            <div class="loader2">
+                
+                <div class="cover2">
+                    <div class="packman">
+                        <div class="eye"></div>
+                    </div>
+                </div>
+
+            </div>
+            <h3>Mr T. Packman</h3>
+        </div>
+        <div class="row back">
+            <a href="index.html"><button class="btn btn-primary">Back to Index</button></a>
+        </div>
+    </div>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">
+    </script>
+</body>
+</html>

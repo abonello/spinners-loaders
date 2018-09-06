@@ -9,8 +9,8 @@
         rel="stylesheet" 
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
         crossorigin="anonymous" />
-
     <style>
+
         body {
             padding: 100px;
             background: #eee;
@@ -32,30 +32,74 @@
         h1 {
             padding: 50px;
         }
+
+        .back {
+            margin-top: 50px;
+        }
+
+        .spinner {
+            width: 100px;
+            height: 100px;
+            background: #eee;
+            border-radius: 50%;
+            position: relative;
+            margin: 50px;
+            display: inline-block;
+            box-shadow: 0 0 0 4px #eee;
+        }
+
+        .spinner::after, .spinner::before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+
+       .spinner-3B {
+            background: none;
+            border: 4px solid #eee;
+       }
+
+       .spinner-3B::before,
+       .spinner-3B::after {
+           width:4px;
+           height: 80px;
+           border-radius: 50%;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           margin-left: -2px;
+           margin-top: -40px;
+       }
+
+       .spinner-3B::before {
+        background: palevioletred;
+        animation: spin3B 1.8s linear infinite;
+       }
+
+       .spinner-3B::after {
+           background: teal;
+           animation: spin3B 2s linear infinite;
+       }
+
+       @keyframes spin3B {
+            0%  { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+       }
+
     </style>
-        
 </head>
 <body>
     <div class="wrap">
-        <h1>Spinners and Loader</h1>
+        <h1>SPINNERS</h1>
         <div class="row">
-            <h2>Spinners</h2>
-            <a href="circular1.html"><button class="btn btn-primary">Circular 1</button></a>
-            <a href="circular2.html"><button class="btn btn-primary">Circular 2</button></a>
-            <a href="atoms1.html"><button class="btn btn-primary">Atoms 1</button></a>
-            <a href="atoms2.html"><button class="btn btn-primary">Atoms 2</button></a>
-            <a href="atoms3.html"><button class="btn btn-primary">Atoms 3 - Wacky Atoms</button></a>
-            <a href="knobs1.html"><button class="btn btn-primary">Rotary Knob 1</button></a>
-            <a href="knobs2.html"><button class="btn btn-primary">Rotary Knob 2</button></a>
-            <a href="boing1.html"><button class="btn btn-primary">Boing 1</button></a>
-            <a href="boing2.html"><button class="btn btn-primary">Boing 2</button></a>
-            <a href="wave1.html"><button class="btn btn-primary">Wave 1 - Sine</button></a>
+            <div class="spinner spinner-3B"></div>
+            <h3>Rotary Knob 2</h3>
         </div>
-        <div class="row">
-            <h2>Loaders</h2>
-            <a href="simplePackman.html"><button class="btn btn-primary">Simple Packman</button></a>
-            <a href="mrTPackman.html"><button class="btn btn-primary">Mr T Packman</button></a>
-            
+        <div class="row back">
+            <a href="index.html"><button class="btn btn-primary">Back to Index</button></a>
         </div>
     </div>
 

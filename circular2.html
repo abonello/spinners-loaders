@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spinners</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+        crossorigin="anonymous" />
+    <style>
+
+        body {
+            padding: 100px;
+            background: #eee;
+        }
+
+        .wrap {
+            margin: 50px auto;
+            width: 80%;
+            box-shadow: 0 35px 40px -20px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.2);
+            /* background: red; */
+            text-align: center;
+            vertical-align: middle;
+            /* height: 400px; */
+            box-sizing: border-box;
+            background: white;
+            padding-bottom: 100px
+        }
+
+        h1 {
+            padding: 50px;
+        }
+
+        .back {
+            margin-top: 50px;
+        }
+
+        .spinnerA {
+            width: 100px;
+            height: 100px;
+            /* background: #eee; */
+            border-radius: 50%;
+            position: relative;
+            margin: 50px;
+            display: inline-block;
+            /* box-shadow: 0 0 0 4px #eee; */
+        }
+
+        .spinnerA::after, .spinnerA::before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .spinner-1b::after {
+            position: absolute;
+            top: -4px;
+            left: -6px;
+            width: 112px;
+            height: 108px;
+            border: 4px solid transparent;
+            border-top-color: tomato;
+            border-bottom-color: tomato;
+            border-right-color: steelblue;
+            border-left-color: steelblue;
+            animation: spinner1b 2s linear infinite;
+        }
+
+        @keyframes spinner1b {
+            0% { 
+                transform: rotate(0deg)
+                           scale(1);
+             }
+             80% {
+                 transform: rotate(180deg)
+                            scale(1.2);
+             }
+            100% { 
+                transform: rotate(360deg)
+                           scale(1);
+             }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>SPINNER</h1>
+        <div class="row">
+            <div class="spinnerA spinner-1b"></div>
+            <h3>Circular 2</h3>
+        </div>
+        <div class="row back">
+            <a href="index.html"><button class="btn btn-primary">Back to Index</button></a>
+        </div>
+    </div>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">
+    </script>
+</body>
+</html>
