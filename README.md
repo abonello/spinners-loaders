@@ -1,5 +1,7 @@
 # Spinners and Loaders
 
+Deployed at https://abonello.github.io/spinners-loaders/index.html
+
 Ideas come from various sources including:
 
 * [Video by Travis of DevTips](https://www.youtube.com/watch?v=lQxt6TdzsAo)
