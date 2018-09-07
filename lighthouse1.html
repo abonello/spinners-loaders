@@ -20,10 +20,14 @@
         .wrap {
             margin: 50px auto;
             width: 80%;
-            box-shadow: 0 35px 40px -20px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.2);
+            -webkit-box-shadow: 0 35px 40px -20px rgba(0,0,0,0.2), 
+                                0 0 5px rgba(0,0,0,0.2);
+                    box-shadow: 0 35px 40px -20px rgba(0,0,0,0.2), 
+                                0 0 5px rgba(0,0,0,0.2);
             text-align: center;
             vertical-align: middle;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
             background: rgb(0, 0, 0);
             padding-bottom: 100px;
             border-radius: 5px;
@@ -47,7 +51,8 @@
             position: relative;
             margin: 50px;
             display: inline-block;
-            animation: spin 2s linear infinite;
+            -webkit-animation: spin 2s linear infinite;
+                    animation: spin 2s linear infinite;
         }
 
         .spinner::after,
@@ -60,28 +65,34 @@
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
             background: rgba(252, 255, 88, 0.5);
-            box-shadow: 8px 0 4px  rgba(252, 255, 88, 0.5);
+            -webkit-box-shadow: 8px 0 4px  rgba(252, 255, 88, 0.5);
+                    box-shadow: 8px 0 4px  rgba(252, 255, 88, 0.5);
         }
 
         .spinner::after {
             top: 7px;
-            transform: rotate(5deg) skew(5deg);
+            -webkit-transform: rotate(5deg) skew(5deg);
+                    transform: rotate(5deg) skew(5deg);
         }
         .spinner::before {
             top: -1px;
-            transform: rotate(-5deg) skew(-5deg);
+            -webkit-transform: rotate(-5deg) skew(-5deg);
+                    transform: rotate(-5deg) skew(-5deg);
+        }
+
+        @-webkit-keyframes spin {
+            0%  { -webkit-transform: rotate(0deg); 
+                          transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); 
+                           transform: rotate(360deg); }
         }
 
         @keyframes spin {
-            0%  { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0%  { -webkit-transform: rotate(0deg); 
+                          transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); 
+                           transform: rotate(360deg); }
         }
-
-        /* @keyframes bouncy2A { use timing of about 0.5 seconds */
-            /* 0%, 100%  { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
-        } */
-
 
     </style>
 </head>
